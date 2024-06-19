@@ -53,7 +53,8 @@ public class Car {
 		if (getClass() != obj.getClass())
 			return false;
 		Car other = (Car) obj;
-		return Objects.equals(brand, other.brand) && Objects.equals(model, other.model)
+		return Objects.equalsIgnoreCase(brand, other.brand) && 
+				Objects.equalsIgnoreCase(model, other.model)
 				&& Objects.equals(year, other.year);
 	}
 	
