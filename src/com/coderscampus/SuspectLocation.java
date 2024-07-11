@@ -27,4 +27,10 @@ public class SuspectLocation {
 		this.country = country;
 	}
 
+	@Override
+	public String toString() {
+		return "SuspectLocation [name=" + name + ", country=" + country + "]";
+	}
+	
+
 }

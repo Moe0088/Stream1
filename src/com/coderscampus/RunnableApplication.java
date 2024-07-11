@@ -13,16 +13,17 @@ public class RunnableApplication {
 		FileService fileService = new FileService();
 
 		for (String filename : filenames) {
+
 			List<SuspectLocation> suspectLocations = fileService.readFile(filename);
+
 			Optional<SuspectLocation> optionalSuspect = suspectLocations.stream()
+
 					.filter(suspectLocation -> "CARMEN SANDIEGO".equalsIgnoreCase(suspectLocation.getName()))
 					.findAny();
-					
 
 			optionalSuspect.ifPresent(
-					suspectLocation -> System.out.println("Carmen Sandiego is in " 
-			+ suspectLocation.getCountry()));
-					
+					suspectLocation -> System.out.println("Carmen Sandiego is in " + suspectLocation.getCountry()));
+
 		}
 	}
 }

@@ -15,10 +15,11 @@ public class FileService {
 			reader = new BufferedReader(new FileReader(filename));
 			String line;
 
+			reader.readLine();
 			while ((line = reader.readLine()) != null) {
 				String[] parts = line.split(",");
-				String name = parts[0];
-				String country = parts[1];
+				String country = parts[0];
+				String name = parts[1];
 				SuspectLocation suspectLocation = new SuspectLocation(name, country);
 				suspectLocations.add(suspectLocation);
 			}
